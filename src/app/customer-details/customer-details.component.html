@@ -1,0 +1,43 @@
+
+<h1 style="text-align: center;color:blue;">{{welcome}}</h1>
+  	 <div class="search">
+  		<span class="fa fa-search"></span>
+  		<input type='text' [(ngModel)]="searchText" placeholder="Search for Names"  />
+	</div>
+ <div style="margin-bottom:100px;">
+<table>
+     <tr>
+      <th (click)="sort('id')">
+       Id
+      </th>
+      <th (click)="sort('firstName')">
+        FirstName
+      </th>
+      <th (click)="sort('lastName')">
+        LastName
+      </th>
+
+      <th (click)="sort('email')">
+       Email
+      </th>
+      <th (click)="sort('isActive')">
+        IsActive
+      </th>
+      <th (click)="sort('dateCreated')">
+        DateCreated
+      </th>
+      <th (click)="sort('dateUpdated')">
+        DateUpdated
+      </th>
+    </tr>
+    <tr *ngFor="let item of records | category: searchText| orderby: {property: column, direction: direction}">
+     <td><a [routerLink]="['/cust_details',{id:item.id,nameFirst:item.firstName,nameLast:item.lastName,user_email:item.email,user_isactive:item.isActive,user_datecreated:item.dateCreated,user_dateupdated:item.dateUpdated}]">{{item.id}}</a></td>
+      <td>{{item.firstName | capitalize}}</td>
+      <td>{{item.lastName | capitalize}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.isActive}}</td>
+      <td>{{item.dateCreated}}</td>
+      <td>{{item.dateUpdated}}</td>
+    </tr>
+  </table>
+  </div>

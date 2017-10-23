@@ -1,0 +1,9 @@
+#page { padding:0; margin:0;}
+            body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
+            #page { background:#eee;}
+#footer { background:#A8A8A8;}
+                  #footer-inner {border: 1px solid blue; box-sizing: border-box; text-align:center; padding:12px; width:100%;}
+                  #footer a {color:blue;text-decoration:none;}
+                  
+                  /* Clear both sides to assist with div alignment  */
+                  .clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
